@@ -1,27 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class VariablesAndFunctions : MonoBehaviour
 {
+    int myInt = 5;
     // Start is called before the first frame update
     void Start()
     {
-        //This line is here to tell me the x position of the object in the scene
-        Debug.Log(transform.position.x);
-
-       
+        myInt = MultiplyByTwo(myInt);
+        Debug.Log(myInt);
     }
+
+
+    int MultiplyByTwo(int number)
+    {
+        int result;
+        result = number * 2;
+        return result;
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= 5f)
-        {
-            Debug.Log("I'm about to hit the ground!");
-        }
-        else
-        {
-            Debug.Log("Yay I'm safe!");
-        }
+        
     }
 }
